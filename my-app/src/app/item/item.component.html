@@ -1,0 +1,29 @@
+
+<form [formGroup]="newItem"    (ngSubmit)="add()">
+  <div class="form-group">
+    <label>item_no</label>
+    <input type="number" formControlName="item_no" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" formControlName="name" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label>Dsecription</label>
+    <input type="text" formControlName="description" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label>Count</label>
+    <input type="number" formControlName="amount" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" [disabled]="!newItem.valid" class="btn btn-danger">Submit</button>
+  </div>
+  <p>{{message}}</p>
+</form>
+
+

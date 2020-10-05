@@ -1,0 +1,22 @@
+<form [formGroup]="actionItem"  (ngSubmit)="depositOrWithdraw()" >
+  <div class="form group" >
+    <label>Deposit/Withdraw item by id</label>
+    <input type="number" formControlName="item_no" class="form-control"   required>
+  </div>
+  <div class="form group" >
+    <label>Count</label>
+    <input type="number" formControlName="amount" class="form-control"  required>
+  </div>
+  <div class="form group">
+    <label>Select option</label>
+    <select name="action" formControlName="action" required>
+      <option type="text" value="deposit">Deposit</option>
+      <option type="text"  value="withdraw">Withdraw</option>
+    </select>
+  </div>
+  <div class="form group">
+    <button type="submit" [disabled]="!actionItem.valid" class="btn btn-danger">Submit</button>
+    <p>{{message}}</p>
+  </div>
+</form>
+
